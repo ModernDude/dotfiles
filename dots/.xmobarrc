@@ -1,0 +1,20 @@
+Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
+	, bgColor = "black"
+	, fgColor = "grey"
+	, position = Top
+	, commands = [ Run Weather "KSTL" ["-t", "<tempF>F", "-L", "18", "-H", "25", "--normal", "green", "--high", "red", "--low", "lightblue"] 36000
+                     , Run Network "wlan0" ["-L", "0", "-H", "32", "--normal", "green", "--high", "red"] 20
+                     , Run Cpu ["-L", "3", "-H", "50", "--normal", "green", "--high", "red"] 20
+		     , Run Battery ["-t","Batt: <left>"] 10
+		     , Run MultiCpu ["-t", "Cpu: <total> <autototal>"] 100
+		     , Run Memory ["-t", "Mem: <usedratio>%"] 100
+		     , Run Swap [] 100
+		     , Run Wireless "wlan0" [] 100
+                     , Run Date "%a %b %_d %1:%M" "date" 100
+                     , Run Com "acpi -b | awk '{print $4 }'" [] "bat" 100 
+	 	     , Run StdinReader
+		   ]
+	, sepChar = "%"
+	, alignSep = "}{"
+	, template = "%StdinReader% }{ %wlan0% | %battery% | %multicpu%  | %memory% * %swap% | <fc=#ee9a00>%date%</fc> | %KSTL%"
+	}

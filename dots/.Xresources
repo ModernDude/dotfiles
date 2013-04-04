@@ -1,0 +1,16 @@
+URxvt.scrollBar : off
+!URxvt.style: plain
+URxvt*font: xft:monaco:size=12
+
+! clickable urls
+URxvt.perl-ext.common: default, matcher
+URxvt.urlLauncher: /usr/bin/firefox
+URxvt.matcher.button: 1
+
+! recent urls
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
+
+! yankable urls
+
+

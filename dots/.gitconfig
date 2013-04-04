@@ -1,0 +1,8 @@
+[user]
+	name = Jeff Sigmon
+	email = jeff@jeffsigmon.com
+[credential]
+	helper = osxkeychain
+[core]
+	excludesfile = ~/.gitignore
+	editor = emacs
