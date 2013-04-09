@@ -5,7 +5,7 @@
 INSTALL_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 function make-link {
-    ln -sf $INSTALL_DIR/dots/$1 $HOME/$1
+    ln -sfhF $INSTALL_DIR/dots/$1 $HOME/$1
 }
 
 if [[ $OSTYPE == darwin* ]]; then
